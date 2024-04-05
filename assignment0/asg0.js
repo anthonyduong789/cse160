@@ -79,6 +79,7 @@ function main() {
           break;
       }
       console.log(V3.elements);
+      drawVector(V3, "green");
     }
 
     
