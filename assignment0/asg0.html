@@ -1,14 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Draw a blue rectangle (canvas version)</title>
-</head>
-
-<body onload="main()">
+  </head>
+  ()
+  <script src="lib/cuon-matrix-cse160.js"></script>
+  <body onload="main()">
     <canvas id="example" width="400" height="400">
-        Please use a browser that supports "canvas"
+      Please use a browser that supports "canvas"
     </canvas>
-    <script src="asg0.js"></script>
+    <div style="display: flex; flex-direction: row">
+      v1 :x
+      <div><input type="number" id="v1_x" /></div>
+      y:
+      <div><input type="number" id="v1_y" /></div>
+    </div>
+
+    <div style="display: flex; flex-direction: row">
+      v2 :x
+      <div><input type="number" id="v2_x" /></div>
+      y:
+      <div><input type="number" id="v2_y" /></div>
+    </div>
+    <button id="DrawButton">Draw</button>
+    <!--Operations  -->
+    <div>
+      <div style="display: flex; flex-direction: row">
+        Operation:
+        <select id="display: flex; flex-direction: row">
+          <option value="option1">add</option>
+          <option value="option2">sub</option>
+          <option value="option3">div</option>
+          <option value="option3">mul</option>
+          Scalar: <input type="number" id="scalar" />
+          <script src="asg0.js"></script>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <button>Draw</button>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
+
