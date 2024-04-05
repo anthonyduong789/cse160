@@ -74,6 +74,9 @@ class Vector3 {
    * @return this
    */
   div(scalar) {
+    for (let i = 0; i < 3; i++) {
+      this.elements[i] /= scalar;
+    }
     // Insert your code here.
     // This function should change this vector (this.elements) and not create a new vector.
 
@@ -86,6 +89,9 @@ class Vector3 {
    * @return this
    */
   mul(scalar) {
+    for  (let i = 0; i < 3; i++) {
+      this.elements[i] *= scalar;
+    }
     // Insert your code here.
     // This function should change this vector (this.elements) and not create a new vector.
 
