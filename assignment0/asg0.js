@@ -25,6 +25,7 @@ function main() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "rgba(0, 0, 0, 1.0)"; // set it black
     ctx.fillRect(0, 0, 400, 400);
+    
   }
   function drawVector(v, color) {
     ctx.beginPath();
@@ -81,8 +82,29 @@ function main() {
         V3.set(V1.div(scalar));
         V4.set(V2.div(scalar));
         break;
-      default:
+      case "magnitude":
+        console.log("V1:maginitude", V1.magnitude());
+        console.log("V2:maginitude",V2.magnitude());
         break;
+      case "normalize":
+        console.log("V1: normlize", V1.normalize());
+        console.log("V2: normalize", V2.normalize());
+        V3.set(V1.normalize());
+        V4.set(V2.normalize());
+        break;
+      case "angleBetween":
+        let dotProduct = Vector3.dot(V1, V2);
+        let angleRadians = Math.acos(dotProduct / (V1.magnitude() * V2.magnitude())); 
+        let angleDegrees = angleRadians * (180 / Math.PI);
+        console.log("angleBetween", angleDegrees);
+        break;
+      case "areaTriangle":
+        let crossProduct = Vector3.cross(V1, V2);
+        let parallelogram = crossProduct.magnitude();
+        let areaTriangle = parallelogram / 2;
+        console.log("Area of the triangle: ", areaTriangle);
+      default:
+         break;
     }
     drawVector(V3, "green");
     drawVector(V4, "green");
@@ -92,4 +114,5 @@ function main() {
   button.addEventListener("click", handleDrawEvent);
   var button2 = document.getElementById("OperationButton");
   button2.addEventListener("click", handleDrawOperationEvent);
+  
 }

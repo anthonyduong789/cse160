@@ -7,15 +7,12 @@
   <script src="lib/cuon-matrix-cse160.js"></script>
 
  <script src="asg0.js"></script>
- 
   <body onload="main()">
     <canvas id="example" width="400" height="400">
       Please use a browser that supports "canvas"
     </canvas>
     <div style="display: flex; flex-direction: row">
-      v1 :x
-      <div><input type="number" id="v1_x" /></div>
-      y:
+      v1 :x <div><input type="number" id="v1_x" /></div> y:
       <div><input type="number" id="v1_y" /></div>
     </div>
 
@@ -30,10 +27,15 @@
       <div style="display: flex; flex-direction: row">
         Operation:
         <select id="operation">
-          <option value="add">add</option>
-          <option value="sub">sub</option>
-          <option value="div">div</option>
-          <option value="mul">mul</option>
+          <option value="add">Add</option>
+          <option value="sub">Sub</option>
+          <option value="div">Div</option>
+          <option value="mul">Mul</option>
+          <option value="magnitude">Nagnitude</option>
+          <option value="normalize">Normalize</option>
+          <option value="angleBetween">AngleBetween</option>
+          <option value="areaTriangle">Area</option>
+
         </select>
         Scalar: <input type="number" id="scalar" />
       </div>
